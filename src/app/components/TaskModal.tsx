@@ -34,7 +34,7 @@ const TaskModal = () => {
             id="taskTitle"
             maxLength={20}
             value={taskTitle}
-            onChange={(e) => setTaskTitle(e.target.value as string)}
+            onChange={(e) => setTaskTitle(e.target.value)}
             autoFocus
           />
         </div>
@@ -46,7 +46,7 @@ const TaskModal = () => {
             id="taskContent"
             maxLength={50}
             value={taskContent}
-            onChange={(e) => setTaskContent(e.target.value as string)}
+            onChange={(e) => setTaskContent(e.target.value)}
           />
         </div>
         <div className="ml-auto mr-5">
