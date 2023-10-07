@@ -22,7 +22,7 @@ export const createTask = async (newTask: NewTask) => {
 };
 
 export const updateTask = async (task: Task) => {
-  const res = await fetch(`${baseUrl}/tasks/?id=${task.id}`, {
+  const res = await fetch(`${baseUrl}/tasks/${task.id}`, {
     method: "PUT",
     headers: {
       "Content-type": "application/json; charset=UTF-8",

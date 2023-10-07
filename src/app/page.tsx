@@ -38,7 +38,7 @@ const Home = async ({ searchParams }: HomeProps) => {
           </div>
         </div>
         <div className="self-center">
-          <Link href="?modal=true">
+          <Link href="?modal=true" id="new">
             <div
               className={`text-xl font-bold w-20 m-5 bg-orange-300 hover:bg-orange-700 rounded-xl border-t-2 border-t-orange-600 hover:border-t-white border-b-2 border-b-orange-600 hover:border-b-white hover:text-white ${
                 !showModal && "animate-bounce"

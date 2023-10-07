@@ -8,11 +8,13 @@ test.describe("view todolist page", () => {
     await expect(page).toHaveTitle(/todolist next.js/);
   });
 
-  test("get 'new' button", async ({ page }) => {
+  test("open modal", async ({ page }) => {
     await page.goto(BASE_URL);
 
-    const newButton = await page.locator("text=New");
+    const modalButton = page.locator("id=new");
+    await modalButton.click();
+    await page.waitForURL(`${BASE_URL}/?modal=true`);
 
-    expect(newButton).toBeTruthy();
+    expect(page.url()).toBe(`${BASE_URL}/?modal=true`);
   });
 });

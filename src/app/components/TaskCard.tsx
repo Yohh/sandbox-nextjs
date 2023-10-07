@@ -39,6 +39,7 @@ const TaskCard = ({ task, index }: taskCardProps) => {
         </div>
         <div className="bg-orange-300 px-3 rounded-tl-lg rounded-br-xl  border-t-2 border-orange-400 border-t-orange-600">
           <button
+            id={`updateTask${task.id}`}
             className={`w-6 px-1 m-1 ${
               task.isDone && "opacity-50 hover:bg-green-600"
             } rounded bg-green-600 hover:bg-green-400 text-white`}
@@ -48,6 +49,7 @@ const TaskCard = ({ task, index }: taskCardProps) => {
             &#10003;
           </button>
           <button
+            id={`deleteTask${task.id}`}
             className="w-6 px-1 m-1 z-10 rounded bg-red-600 hover:bg-red-400 text-white"
             onClick={() => {
               deleteTask(task.id);

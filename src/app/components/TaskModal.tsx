@@ -61,6 +61,7 @@ const TaskModal = () => {
           <Link href="/">
             <button
               className="w-8 px-1 m-1 rounded bg-green-600 hover:bg-green-400 text-white"
+              id="taskSubmit"
               type="submit"
               onClick={() => createTask(task as NewTask)}
             >
