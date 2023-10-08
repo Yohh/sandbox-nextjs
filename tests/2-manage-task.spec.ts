@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 
 test.describe("manage task", () => {
   test("create task", async ({ page }) => {
-    await page.goto(`${BASE_URL}/?modal=true`);
+    await page.goto(`${BASE_URL}/todolist?modal=true`);
 
     const titleText = `test_title_${uuidv4().slice(0, 8)}`;
 
@@ -20,7 +20,7 @@ test.describe("manage task", () => {
     const submitButton = page.locator("id=taskSubmit");
     await submitButton.click();
 
-    await page.goto(BASE_URL);
+    await page.goto(`${BASE_URL}/todolist`);
 
     expect(page.locator(`text=${titleText}`)).toBeTruthy();
 
@@ -62,7 +62,7 @@ test.describe("manage task", () => {
     });
     const createdTaskData: Task = await createTask.json();
 
-    await page.goto(BASE_URL);
+    await page.goto(`${BASE_URL}/todolist`);
 
     const updateButton = page.locator(`id=updateTask${createdTaskData.id}`);
     await updateButton.click();
@@ -102,7 +102,7 @@ test.describe("manage task", () => {
     });
     const createdTaskData: Task = await createTask.json();
 
-    await page.goto(BASE_URL);
+    await page.goto(`${BASE_URL}/todolist`);
 
     const deleteButton = page.locator(`id=deleteTask${createdTaskData.id}`);
     await deleteButton.click();

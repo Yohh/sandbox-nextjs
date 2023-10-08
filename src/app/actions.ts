@@ -6,6 +6,17 @@ import { Task } from "./components/TaskCard";
 
 const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
+export const getTasks = async () => {
+  try {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/tasks`, {
+      next: { tags: ["tasks"] },
+    });
+    return res.json();
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const createTask = async (newTask: NewTask) => {
   const res = await fetch(`${baseUrl}/tasks`, {
     method: "POST",

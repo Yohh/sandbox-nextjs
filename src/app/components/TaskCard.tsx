@@ -60,7 +60,13 @@ const TaskCard = ({ task, index }: taskCardProps) => {
         </div>
       </div>
       <div className="bg-orange-300 mx-4 rounded-b-xl">
-        {isContentDisplayed && <div className="p-3">{task.content}</div>}
+        {isContentDisplayed && (
+          <div className="animate-growTaskContent">
+            <div className="animate-showTaskContent pt-2">
+              <span>{task.content}</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
