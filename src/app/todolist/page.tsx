@@ -1,4 +1,3 @@
-import Link from "next/link";
 import TaskCard, { Task } from "../components/TaskCard";
 import TaskModal from "../components/TaskModal";
 import { revalidateTag } from "next/cache";
@@ -17,16 +16,14 @@ const todolist = async ({ searchParams }: TodolistProps) => {
   return (
     <section className="flex flex-col justify-center items-center w-screen h-screen bg-emerald-950">
       <div className="absolute top-6 left-10 text-xl text-orange-900">
-        <Link href="/">
-          <LinkButton text="HOME" />
-        </Link>
+        <LinkButton text="HOME" path="/" />
       </div>
       <div className="flex flex-col justify-between text-center w-1/2 h-3/4 bg-orange-400 text-orange-900 rounded-3xl">
         <div className="h-4/5">
           <h1 className="bg-orange-300 text-xl font-bold rounded-tl-3xl rounded-tr-3xl p-4">
             todo-list
           </h1>
-          <div className="p-4 overflow-y-scroll max-h-full">
+          <div className="p-4 overflow-y-auto max-h-full">
             {tasks &&
               tasks.map((task, index) => (
                 <div key={task.id}>
@@ -35,12 +32,8 @@ const todolist = async ({ searchParams }: TodolistProps) => {
               ))}
           </div>
         </div>
-        <div className="self-center">
-          <Link href="?modal=true" id="new">
-            <div className={`${!showModal && "animate-bounce"} mb-2`}>
-              <LinkButton text="NEW" />
-            </div>
-          </Link>
+        <div className={`self-center mb-2`}>
+          <LinkButton text="NEW" path={"?modal=true"} id="new" />
         </div>
         {showModal && <TaskModal />}
       </div>

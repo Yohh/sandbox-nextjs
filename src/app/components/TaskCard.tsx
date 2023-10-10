@@ -37,7 +37,7 @@ const TaskCard = ({ task, index }: taskCardProps) => {
           </span>
           {task.isDone && <i className="text-green-600 ml-4">&#10003;</i>}
         </div>
-        <div className="bg-orange-300 px-3 rounded-tl-lg rounded-br-xl  border-t-2 border-orange-400 border-t-orange-600">
+        <div className="bg-orange-300 px-3 rounded-tl-lg rounded-br-xl border-t-2 border-t-orange-600">
           <button
             id={`updateTask${task.id}`}
             className={`w-6 px-1 m-1 ${
@@ -62,7 +62,11 @@ const TaskCard = ({ task, index }: taskCardProps) => {
       <div className="bg-orange-300 mx-4 rounded-b-xl">
         {isContentDisplayed && (
           <div className="animate-growTaskContent">
-            <div className="animate-showTaskContent pt-2">
+            <div
+              className="animate-showTaskContent pt-2"
+              role="button"
+              onClick={() => setIsContentDisplayed(!isContentDisplayed)}
+            >
               <span>{task.content}</span>
             </div>
           </div>
