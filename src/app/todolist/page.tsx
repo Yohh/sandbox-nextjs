@@ -15,10 +15,7 @@ const todolist = async ({ searchParams }: TodolistProps) => {
 
   return (
     <section className="flex flex-col justify-center items-center w-screen h-screen bg-emerald-950">
-      <div className="absolute top-6 left-10 text-xl text-orange-900">
-        <LinkButton text="HOME" path="/" />
-      </div>
-      <div className="flex flex-col justify-between text-center w-1/2 h-3/4 bg-orange-400 text-orange-900 rounded-3xl">
+      <div className="flex flex-col justify-between text-center w-4/5 sm:w-1/2 md:w-2/5 lg:w-1/3 xl:w-1/4 h-3/4 bg-orange-400 text-orange-900 rounded-3xl">
         <div className="h-4/5">
           <h1 className="bg-orange-300 text-xl font-bold rounded-tl-3xl rounded-tr-3xl p-4">
             todo-list
